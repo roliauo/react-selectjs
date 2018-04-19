@@ -1,0 +1,144 @@
+.custom-select {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 150px;  /*custom*/
+/*  height: 100%;*/
+  border-bottom: 0px;
+  border-radius: 6px;  /* custom*/
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  box-shadow: 0px 1em 2em -1.5em rgba(0, 0, 0, 0.5);
+  transition: all .4s ease-in-out;
+}
+
+/*.custom-select > i.toggle {
+  position: absolute;
+  z-index: 4;
+  right: 1.5em;
+  top: 1.6em;
+  color: #ccc;
+}
+*/
+.custom-select .title,
+.custom-select .placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 12px;  /* 1.5em 2em*/
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  color: #BBBBBB;
+}
+
+.custom-select .placeholder:after,
+.custom-select label.option input:checked ~ span.title:after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 6px; 
+        height: 6px;
+        top: 50%; 
+        right: 10%;
+        margin-right: 14px;
+        margin-top: -3px;
+        border-bottom: 1px solid #000;
+        border-right: 1px solid #000;
+        transform: rotate(45deg) translateY(-50%);
+        transition: all .4s ease-in-out;
+        transform-origin: 50% 0;
+      }
+
+.custom-select label.option input:checked ~ span.title:after {
+       /* margin-top: -14px;*/
+            top: 32%;
+      }
+
+
+.custom-select > input:checked ~ .placeholder:after {  /* :focus*/
+        margin-top: 3px;
+        transform: rotate(-135deg) translateY(-50%);
+  }
+
+.custom-select > input {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+/*.custom-select > input:checked div.options label.option .title {
+  display: none !important;
+}*/
+.custom-select > input:not(:checked) {
+  z-index: 4;
+}
+.custom-select > input:not(:checked) ~ label.option > span.title {
+  display: none;
+}
+
+.custom-select > input:disabled {
+  cursor: no-drop;
+}
+.custom-select > span.placeholder {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  width: 100%;
+  color: #999;
+  border-top: 0px;
+}
+.custom-select label.option {
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  transition: all 1s ease-out;
+}
+.custom-select label.option span.title {
+  position: relative;
+  z-index: 2;
+ /* transition: background .3s ease-out;*/
+}
+.custom-select label.option span.title i.icon {
+  padding-right: 8px;
+  color: #92a8d1;
+}
+.custom-select label.option span.title:hover {
+  color: #000;
+  background: #d8e5c9;
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+.custom-select label.option input {
+  display: none;
+}
+.custom-select label.option input:checked ~ span.title {
+  position: absolute;
+  display: block;
+  z-index: 3;
+  top: 0px;
+  font-size: 12px;
+  background: #fff;
+  border-top: 0px;
+  box-shadow: none;
+  color: #000;
+  width: 100%;
+}
+
+.custom-select label.option input:disabled ~ span.title {
+  background: #f9f9f9 !important;
+  color: #aaa;
+}
+.custom-select label.option input:disabled ~ span.title:hover {
+  color: #aaa;
+  background: none;
+  cursor: no-drop;
+}
