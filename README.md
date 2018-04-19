@@ -9,7 +9,7 @@
 ## Installation
 
 ```shell
-npm install react-selectjs
+npm install roliauo/react-selectjs
 ```
 ## Importing
 
