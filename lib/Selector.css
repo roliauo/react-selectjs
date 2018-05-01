@@ -1,15 +1,15 @@
 .custom-select {
-  position: relative;
+  position: absolute;
   overflow: hidden;
-  display: block;
+  display: inline-block;
   width: 150px;  /*custom*/
 /*  height: 100%;*/
   border-bottom: 0px;
   border-radius: 6px;  /* custom*/
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 0.5px solid #DBDBDB; /*rgba(0, 0, 0, 0.4);*/
   font-size: 12px;
   box-shadow: 0px 1em 2em -1.5em rgba(0, 0, 0, 0.5);
-  transition: all .4s ease-in-out;
+/*  transition: all .4s ease-in-out;*/
 }
 
 /*.custom-select > i.toggle {
@@ -33,34 +33,40 @@
   color: #BBBBBB;
 }
 
+
+.custom-select .title,
+.custom-select .placeholder.black {
+  color: #222222;
+}
+
 .custom-select .placeholder:after,
 .custom-select label.option input:checked ~ span.title:after {
-        position: absolute;
-        display: block;
-        content: '';
-        width: 6px; 
-        height: 6px;
-        top: 50%; 
-        right: 10%;
-        margin-right: 14px;
-        margin-top: -3px;
-        border-bottom: 1px solid #000;
-        border-right: 1px solid #000;
-        transform: rotate(45deg) translateY(-50%);
-        transition: all .4s ease-in-out;
-        transform-origin: 50% 0;
-      }
+  position: absolute;
+  display: block;
+  content: '';
+  width: 6px;
+  height: 6px;
+  top: 50%;
+  right: 20px;
+/*  margin-right: 4px;*/
+  margin-top: -3px;
+  border-bottom: 1px solid #999;
+  border-right: 1px solid #999;
+  transform: rotate(45deg) translateY(-50%);
+  transition: all .4s ease-in-out;
+  transform-origin: 50% 0;
+}
 
 .custom-select label.option input:checked ~ span.title:after {
-       /* margin-top: -14px;*/
-            top: 32%;
-      }
+ /* margin-top: -14px;*/
+      top: 32%;
+}
 
 
 .custom-select > input:checked ~ .placeholder:after {  /* :focus*/
-        margin-top: 3px;
-        transform: rotate(-135deg) translateY(-50%);
-  }
+  margin-top: 3px;
+  transform: rotate(-135deg) translateY(-50%);
+}
 
 .custom-select > input {
   position: absolute;
@@ -113,10 +119,15 @@
   color: #92a8d1;
 }
 .custom-select label.option span.title:hover {
-  color: #000;
+  color: #222222;
   background: #d8e5c9;
   box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
 }
+
+.custom-select label.option span.title.active {
+  background: #e9f2de;  /*rgba(106, 162, 54);*/
+}
+
 .custom-select label.option input {
   display: none;
 }

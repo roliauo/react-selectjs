@@ -3,7 +3,16 @@
 
 ![](example/pic1.JPG)
 ![](example/pic2.JPG)
+
+-----
+hover
 ![](example/pic3.JPG)
+------
+selected option
+![](example/seletedColor.JPG)
+---
+disabled
+![](example/disabled.JPG)
 
 
 ## Installation
@@ -27,6 +36,8 @@ import Selector from 'react-selectjs';
  <li>width (String)</li>
  <li>borderRadius (String)</li>
  <li>onClick (function)</li>
+ <li>disabled (string)</li>
+ <li>selected (string, optionName)</li>
 </ul>
 
 ### DefaultProps
@@ -36,9 +47,13 @@ import Selector from 'react-selectjs';
 	title: 'Choose...'
 	borderRadius: 6px
 	width: 150px
-	
+
 ## Usage
 
 ```js
-<Selector padding='5px' borderRadius = '8px' onClick={(e)=> this.setSelectValue(e) } />
+<Selector disabled="true"
+		  selected='item2'
+		  padding='5px'
+		  borderRadius = '15px'
+		  onClick={(e)=> this.setSelectValue(e) } />
 ```
